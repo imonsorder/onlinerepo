@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;800&display=swap');
+:root{
+    --black:#192a56;
+    --orange:#f95f1d;
+    --yellow:#ffa801;
+}
+
+*{
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+}
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 7%;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+    background: #fff;
+}
+header .logo{
+    font-size: 2.5rem;
+    color: #666;
+    font-weight: bolder;
+}
+header .navbar a{
+    font-size: 2rem;
+    margin-left: 2.5rem;
+    color: var(--black);
+}
+
+header .navbar a:hover{
+    color: var(--orange);
+}
+
+#menu-bar{
+    font-size: 3rem;
+    color: var(--black);
+    cursor: pointer;
+    display: none;
+}
+
+
+
+@media (max-width:1200px) {
+    html{
+        font-size: 55%;
+    }
+}
+
+@media (max-width:768px){
+    #menu-bar{
+        display: block;
+    }
+    header .navbar{
+        position: absolute;
+        top: 100%;
+        left:0;
+        width: 100%;
+        background: #eee;
+        height: calc(100vh -100%);
+        border-top: .1rem solid rgba(0,0,0,.2);
+        display: none;
+    }
+
+        header .navbar.nav-toggle{
+            display: block;
+        }
+
+
+    header .navbar a{
+        margin: 1rem;
+        display: block;
+        padding: 1.3rem 0;
+        background: #fff;
+        text-align: center;
+        border: .1rem solid #444;
+        animation: nav-links .5s linear backwards;
+        animation-delay: calc(.2s * var(--i));
+        
+    }
+    @keyframes nav-links {
+       0%{
+        transform: translateY(-50rem);
+        opacity: 0;
+       }
+    }
+    .fa-times{
+        transform: rotate(180deg);
+    }
+
+}
